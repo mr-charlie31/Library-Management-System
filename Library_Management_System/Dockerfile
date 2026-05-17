@@ -1,14 +1,10 @@
-FROM maven:3.9-eclipse-temurin-17 AS build
+FROM tomcat:9.0-jdk11-openjdk-slim
 
-WORKDIR /app
-COPY . .
+# Remove default Tomcat apps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-RUN mvn clean package -DskipTests
-
-FROM tomcat:9.0-jdk17-temurin
-
-COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
+# Copy your local web files (HTML, JSP, WEB-INF/web.xml) into Tomcat
+COPY ./WebContent /usr/local/tomcat/webapps/ROOT
 
 EXPOSE 8080
-
 CMD ["catalina.sh", "run"]
