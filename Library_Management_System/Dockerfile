@@ -1,5 +1,5 @@
 # Downgrade to Tomcat 9 which perfectly supports javax.servlet specifications
-FROM tomcat:11.0-jdk11-openjdk-slim
+FROM tomcat:9.0-jdk11-openjdk-slim
 
 # Clear out default Tomcat webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
