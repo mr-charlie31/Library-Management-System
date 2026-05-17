@@ -1,6 +1,5 @@
 package com.lms.controller;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,7 +23,7 @@ import com.lms.service.UserService;
 import com.lms.servicelmpl.BookServicelmpl;
 import com.lms.servicelmpl.UserServiceImpl;
 
-@WebServlet("/BookController")
+
 public class BookController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
