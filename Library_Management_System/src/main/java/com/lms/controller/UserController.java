@@ -1,6 +1,7 @@
 package com.lms.controller;
 
 import jakarta.servlet.ServletException;
+import javax.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
